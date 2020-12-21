@@ -1,0 +1,19 @@
+plugins:
+  listp:
+    executor: host_agent
+    package_name: 'cloudify-list-plugin'
+    source: https://github.com/ahmadiesa-abu/cloudify-list-plugin/archive/main.zip
+    package_version: '0.0.1'
+
+node_types:
+  cloudify.listp.Directory:
+    derived_from: cloudify.nodes.Root
+    properties:
+      directory_path:
+        description: >
+                    Path to Directory to list files.
+        default: null
+    interfaces:
+      cloudify.interfaces.lifecycle:
+        start:
+          implementation: listp.list_package.tasks.list_directory_files

@@ -1,0 +1,24 @@
+tosca_definitions_version: cloudify_dsl_1_3
+
+imports:
+  - http://www.getcloudify.org/spec/cloudify/4.3.3/types.yaml
+  - plugin:cloudify-list-plugin
+
+
+node_templates:
+
+  test_host:
+    type: cloudify.nodes.Compute
+    properties:
+      ip: 127.0.0.1
+      agent_config:
+        user: cloud-user
+        key: { get_secret: private_key_path }
+
+  test_list:
+    type: cloudify.listp.Directory
+    properties:
+      directory_path: "/tmp"
+    relationships:
+      - type: cloudify.relationships.contained_in
+        target: test_host
