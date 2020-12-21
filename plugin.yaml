@@ -2,8 +2,8 @@ plugins:
   listp:
     executor: host_agent
     package_name: 'cloudify-list-plugin'
-    source: https://github.com/ahmadiesa-abu/cloudify-list-plugin/archive/main.zip
-    package_version: '0.0.1'
+    source: https://github.com/ahmadiesa-abu/cloudify-list-plugin/archive/py3.zip
+    package_version: '0.0.2'
 
 node_types:
   cloudify.listp.Directory:

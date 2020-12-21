@@ -2,10 +2,10 @@ from setuptools import setup
 
 setup(
     name='cloudify-list-plugin',
-    version='0.0.1',
+    version='0.0.2',
     description='list files',
     packages=['list_package'],
     install_requires=[
-        "cloudify-plugins-common>=4.3.3"
+        "cloudify-common>=4.5"
     ]
 )
