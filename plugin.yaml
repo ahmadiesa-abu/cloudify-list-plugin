@@ -17,3 +17,5 @@ node_types:
       cloudify.interfaces.lifecycle:
         start:
           implementation: listp.list_package.tasks.list_directory_files
+          inputs:
+            directory_path: { get_property: [self, directory_path] }
