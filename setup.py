@@ -6,6 +6,6 @@ setup(
     description='list files',
     packages=['list_package'],
     install_requires=[
-        "cloudify-plugins-common>=4.3.3"
+        "cloudify-common==5.2.3"
     ]
 )
